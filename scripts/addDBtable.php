@@ -18,8 +18,10 @@ class addDBtable extends Maintenance {
 		foreach( $databases as $database ) {
 	
 		$this->output( "Inserting " . $this->getArg( 0 ) . " into " . $database . "!\n" );
+		$dbw->begin();
 		$dbw->selectDB( $database );
 		$dbw->sourceFile( $this->getArg( 0 ) );
+		$dbw->commit();
 
 		}
 	}
