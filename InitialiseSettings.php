@@ -61,29 +61,15 @@ $wgConf->settings = array(
 	),
 ),
 
-'wgRemoveGroups' => array(
+'wgGroupsRemoveFromSelf' => array(
 	'default' => array(
-		'bureaucrat' => array( 'sysop', 'bot' ),
+		'bureaucrat' => array( 'bureaucrat' ),
 	),
 ),
 
-'+wgGroupPermissions' => array(
+'wgRemoveGroups' => array(
 	'default' => array(
-		'staff' => array(
-			'userrights' => true
-		),
-		'bureaucrat' => array(
-			'userrights' => false
-		),
-	),
-	'metawiki' => array(
-		'staff' => array(
-			'userrights-interwiki' => true,
-			'userrights' => true
-		),
-		'bureaucrat' => array(
-			'userrights' => false
-		)
+		'bureaucrat' => array( 'sysop', 'bot' ),
 	),
 ),
 

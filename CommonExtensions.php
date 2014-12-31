@@ -1,7 +1,8 @@
 <?php
 
 $extensions = array(
-'/var/www/html/extensions/GlobalUserrights/GlobalUserrights.php',
+$IP . '/extensions/GlobalUserrights/GlobalUserrights.php',
+$IP . '/extensions/GlobalBlocking/GlobalBlocking.php'
 );
 
 foreach ( $extensions as $extension ) {

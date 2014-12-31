@@ -1,1 +1,4 @@
 This is some wikifarm config that I've been playing with
+
+Requirements: 
+For global blocking, create the globalblocking and follow steps on https://www.mediawiki.org/wiki/Extension:GlobalBlocking

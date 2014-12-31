@@ -35,14 +35,15 @@ require_once( "wgConf.php" );
 if (! in_array($wgDBname, $wgLocalDatabases)) {
 	die("This wiki does not exist");
 }
+require_once( "CommonExtensions.php" );
+$wgGroupPermissions = array();
 
 require_once( "InitialiseSettings.php" );
+require_once( "wgGroupPermissions.php" );
 
 $wgConf->extractAllGlobals( $wgDBname );
 
 $wgCookieDomain = '.faceyspacies.com';
-
-require_once( "CommonExtensions.php" );
 
 function faceyGetSiteParams( $conf, $wiki ) {
 // I don't know if the callback is ever used, just following the example on MW.org
