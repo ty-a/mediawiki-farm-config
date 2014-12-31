@@ -139,10 +139,19 @@ $wgConf->settings['wgGroupPermissions'] =  array(
 			
 			'userrights' => true,
 			
+			'checkuser' => true,
+			'checkuser-log' => true,
+			
 			#global rights
 			'globalblock-exempt' => true,
 			'globalblock-whitelist' => true,
 		),
+		
+		'checkuser' => array(
+			'checkuser' => true,
+			'checkuser-log' => true
+		), 
+		
 		'bureaucrat' => array(
 			'userrights' => false
 		),

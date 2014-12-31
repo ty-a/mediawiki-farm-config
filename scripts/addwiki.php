@@ -70,6 +70,8 @@ class AddWiki extends Maintenance {
 		$this->output( "Initialising tables\n" );
 		$dbw->sourceFile( $this->getDir() . '/tables.sql' );
 		$dbw->sourceFile( $IP . '/extensions/GlobalBlocking/localdb_patches/setup-global_block_whitelist.sql' );
+		$dbw->sourceFile( $IP . '/extensions/CheckUser/cu_changes.sql' );
+		$dbw->sourceFile( $IP . '/extensions/CheckUser/cu_log.sql' );
 
 		//$dbw->query( "INSERT INTO site_stats(ss_row_id) VALUES (1)" );
 
