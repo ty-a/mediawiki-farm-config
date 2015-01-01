@@ -6,7 +6,7 @@ global $wgCityId;
 global $lang;
 $lang = 'en';
 
-if( !wgCommandLine ) {
+if( !$wgCommandLineMode ) {
 if ( preg_match( '/^(.*)\.faceyspacies.com$/', $_SERVER['HTTP_HOST'], $matches ) ) {
      $wikiname = $matches[1];
 } else {
