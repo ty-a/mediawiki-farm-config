@@ -2,3 +2,8 @@ This is some wikifarm config that I've been playing with
 
 Requirements: 
 For global blocking, create the globalblocking database and follow steps on https://www.mediawiki.org/wiki/Extension:GlobalBlocking
+
+Wikifactory
+Create a database called wikifactory, use the schema in the sql folder in Wikifactory repo
+Either make tables or hope for Schema update from Wikia
+The required Wikia files for Wikifactory are in the dependencies folder, move them to the extensions folder

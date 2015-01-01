@@ -29,7 +29,7 @@ $wgConf->settings = array(
 ),
 
 'wgArticlePath' => array(
-	'default' => '/index.php/$1',
+	'default' => '/wiki/$1',
 ),
 
 'wgUploadDirectory' => array(

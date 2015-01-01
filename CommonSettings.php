@@ -1,41 +1,39 @@
 <?php
 
 global $wikiname;
+global $wgCityId;
 // default language is english
 global $lang;
 $lang = 'en';
-if( $wgCommandLineMode ) {
-	//$_SERVER['HTTP_HOST'] = 'meta.faceyspacies.com';
-	$_SERVER['HTTP_HOST'] = readline("Wiki URL: ");
-}
 
+if( !wgCommandLine ) {
 if ( preg_match( '/^(.*)\.faceyspacies.com$/', $_SERVER['HTTP_HOST'], $matches ) ) {
      $wikiname = $matches[1];
 } else {
      die( "Invalid host name, can't determine wiki name" );
      // You could also redirect to a nicer "No such wiki" page.
 }
- 
-if( $wikiname == "www"  || $wikiname == "images" ) {
-     // Change this to your "main" wiki.
-     $wikiname = "meta";
-}
-
-if( strpos( $wikiname, '.' ) !== false ) {
-	$lang = substr( $wikiname, 0, 2 ); # lang codes are 2 chars
-	$wgDBname = str_replace( ".", "", $wikiname ) . "wiki";
-} else {
-	$wgDBname = $wikiname . 'wiki';
 }
 
 $wgConf = new SiteConfiguration;
  
 require_once( "wgConf.php" );
 
-if (! in_array($wgDBname, $wgLocalDatabases)) {
-	die("This wiki does not exist");
-}
+$wgExternalSharedDB = "wikifactory";
+$wgWikiFactoryCacheType = CACHE_MEMCACHED;
+$wgNotAValidWikia = "http://meta.faceyspacies.com/wiki/Invalid_Wiki";
+
 require_once( "CommonExtensions.php" );
+
+$WFL = new WikiFactoryLoader();
+$wgCityId = $WFL->execute();
+
+$wgDBname = WikiFactory::IDtoDB( $wgCityId );
+
+if( $wikiname == "meta" ) {
+	require_once($IP . '/extensions/WikiFactory/SpecialWikiFactory.php');
+}
+
 $wgGroupPermissions = array();
 
 require_once( "InitialiseSettings.php" );

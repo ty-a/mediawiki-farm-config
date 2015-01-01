@@ -142,6 +142,8 @@ $wgConf->settings['wgGroupPermissions'] =  array(
 			'checkuser' => true,
 			'checkuser-log' => true,
 			
+			'wikifactory' => true,
+			
 			#global rights
 			'globalblock-exempt' => true,
 			'globalblock-whitelist' => true,
