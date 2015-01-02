@@ -21,6 +21,7 @@
  * @file
  * @ingroup Maintenance
  * @ingroup Wikimedia
+ * @TODO: Add values to WikiFactory
  */
 
 require_once( dirname( __FILE__ ) . '/Maintenance.php' );
@@ -33,7 +34,7 @@ class AddWiki extends Maintenance {
 		$this->addArg( 'site', 'Type of site, e.g. wikipedia' );
 		$this->addArg( 'dbname', 'Name of database to create, e.g. enwiki' );
 		$this->addArg( 'domain', 'Domain name of the wiki, e.g. en.wikipedia.org' );
-		$this->addArg( 'founder', 'The wiki\'s founder' );
+		$this->addArg( 'founder', 'The wiki\'s founder user ID' );
 		$this->addArg( 'founderemail', 'The founder\'s email' );
 	}
 

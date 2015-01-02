@@ -4,40 +4,8 @@ global $lang;
 
 $wgConf->settings = array(
 
-'wgLanguageCode' => array(
-	'default' => $lang,
-),
-
 'wgEnableUploads' => array(
 	'default' => true,
-),
-
-'wgSitename' => array(
-	'default' => ucfirst($wikiname) . ' Wiki',
-),
-
-'wgMetaNamespace' => array(
-	'default' => ucfirst($wikiname),
-),
-
-'wgServer' => array(
-	'default' => '//' . $wikiname . '.faceyspacies.com',
-),
-
-'wgCanonicalServer' => array(
-	'default' => 'http://' . $wikiname . '.faceyspacies.com',
-),
-
-'wgArticlePath' => array(
-	'default' => '/wiki/$1',
-),
-
-'wgUploadDirectory' => array(
-	'default' => '/var/www/html/images/' . $wikiname,
-),
-
-'wgUploadPath' => array(
-	'default' => '//images.faceyspacies.com/images/' . $wikiname,
 ),
 
 'wgSharedDB' => array(

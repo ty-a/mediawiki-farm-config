@@ -1,5 +1,6 @@
 <?php
 require_once( dirname( __FILE__ ) . '/Maintenance.php' );
+// @TODO: Load DB list from Wikifactory
 
 class addDBtable extends Maintenance {
 
