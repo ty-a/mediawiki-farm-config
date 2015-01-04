@@ -119,7 +119,7 @@ class AddWiki extends Maintenance {
 
 		$article->doEdit( $this->getFirstArticle( $ucsite, $name ), '', EDIT_NEW | EDIT_AUTOSUMMARY );
 
-		$this->output( "Wiki created!" );
+		$this->output( "Wiki created! Please add its info to Wikifactory.\n" );
 	}
 
 	private function getFirstArticle( $ucsite, $name ) {

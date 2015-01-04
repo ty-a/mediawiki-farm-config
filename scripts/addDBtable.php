@@ -12,17 +12,23 @@ class addDBtable extends Maintenance {
 	
 	public function execute() {
 	
-		$databases = array_map( 'trim', file( "/var/www/config/all.dblist" ) );
-	
-		$dbw = wfGetDB( DB_MASTER );
-
-		foreach( $databases as $database ) {
-	
-		$this->output( "Inserting " . $this->getArg( 0 ) . " into " . $database . "!\n" );
-		$dbw->begin();
-		$dbw->selectDB( $database );
-		$dbw->sourceFile( $this->getArg( 0 ) );
-		$dbw->commit();
+		$dbh = wfGetDB( DB_MASTER );
+		$dbh->selectDB( 'wikifactory' );
+		
+		$res = $dbh->select(
+			'city_list',
+			'city_dbname'
+		);
+		
+		foreach( $res as $database ) {
+			
+			$dbh->selectDB($database->city_dbname);
+			$this->output( "Inserting " . $this->getArg( 0 ) . " into " . $database->city_dbname . "!\n" );
+			$dbh->begin();
+			$dbh->selectDB( $database );
+			$dbh->sourceFile( $this->getArg( 0 ) );
+			$dbh->commit();
+			
 
 		}
 	}
